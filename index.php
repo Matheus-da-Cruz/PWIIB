@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="contato.php">pagina de contatos </a>
     <?php
 
     echo "<h1>Titulo de projetos pwii b</h1>"
