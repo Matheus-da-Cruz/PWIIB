@@ -6,10 +6,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <link rel="stylesheet" href="bootstrap.min.css">
+<style>
+  .row{
+    border: 2px solid red;
+    padding: 5px;
+
+  }
+
+  .row > div {
+    border:2px solid yellow;
+    padding: 50px 0;
+    text-align: center
+  }
+
+</style>
+
+
+
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+
+<div class="row">
+    <div class="col-3"> 
+        <button type="button" class="btn btn-primary">Cadastro</button>
+  
+    </div>
+
+    <div class="col-6">
+      <div class="mb-3">
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+    </div>
+
+    <div class="col-3">
+      <button type="button" class="btn btn-primary">Pesquisar</button>
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,12 +157,12 @@
 </div>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Launch demo modal
-</button>
+</button> -->
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -124,12 +213,12 @@
     </div>
     <span class="badge text-bg-primary rounded-pill">14</span>
   </li>
-</ol>
+</ol> -->
     <?php
 
-    echo "<h1>Titulo de projetos pwii b</h1>"
 
-    ?>
+
+    ?> 
 <script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>
