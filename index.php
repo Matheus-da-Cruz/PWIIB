@@ -7,17 +7,6 @@
     <title>Document</title>
 <link rel="stylesheet" href="bootstrap.min.css">
 <style>
-  .row{
-    border: 2px solid red;
-    padding: 5px;
-
-  }
-
-  .row > div {
-    border:2px solid yellow;
-    padding: 50px 0;
-    text-align: center
-  }
 
 </style>
 
@@ -26,25 +15,39 @@
 </head>
 <body>
 
-
-
-<div class="row">
-    <div class="col-3"> 
-        <button type="button" class="btn btn-primary">Cadastro</button>
-  
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark"> 
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+         
+        
+       
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            php
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="variavel.php">variavel</a></li>
+            <li><a class="dropdown-item" href="if.php">if</a></li>
+            <li><a class="dropdown-item" href="while.php">while</a></li>
+            <li><a class="dropdown-item" href="for.php">for</a></li>
+            <li><a class="dropdown-item" href="switch.php">switch</a></li>
+            <li><a class="dropdown-item" href="arraT.PHP">array/vetor</a></li>
+          </ul>
+        </li>
+        
+        </li>
+      </ul>
+      
     </div>
-
-    <div class="col-6">
-      <div class="mb-3">
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      </div>
-    </div>
-
-    <div class="col-3">
-      <button type="button" class="btn btn-primary">Pesquisar</button>
-    </div>
-
-
+  </div>
+</nav>
 
 
 
