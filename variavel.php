@@ -142,11 +142,11 @@ Exemplo de declaração de constante:
         echo"<br>";
         echo $roblox * $minecraft;
 
-        echo"br"
+        echo"br";
 
         echo"exercicio 3";
         echo"<br>";
-        echo $roblox * $minecraft;
+       
 
 
 
