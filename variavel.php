@@ -38,7 +38,7 @@
             <li><a class="dropdown-item" href="while.php">while</a></li>
             <li><a class="dropdown-item" href="for.php">for</a></li>
             <li><a class="dropdown-item" href="switch.php">switch</a></li>
-            <li><a class="dropdown-item" href="arraT.PHP">array/vetor</a></li>
+            <li><a class="dropdown-item" href="array.php">array/vetor</a></li>
           </ul>
         </li>
         

@@ -49,28 +49,7 @@
         <li>condiçao de finalizaçao</li>
         <li>incremento de variavel de controle </li>
     <ol>
-        <pre>
-            <?php
-            while($i = 0; $i < 10;$i++){
-                echo "indice $i <br>";
-            }
-
-            ?>
-            </pre>
-        </p>
-
-<h2>do while </h2>
-<pre>
-
-</pre>
-<?php
-$i = 0;
-do(
-    echo"do while com indice $i (br)";
-    $i++;
-)while($i < 10)
-
-?>
+       
 <script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>
