@@ -138,6 +138,20 @@
  
  </table>
 
+ <h1> sorteio </h1>
+
+ <?php
+  $sorteio = array();
+  
+  for ($i = 0 ; $i < 15; $i++) {
+      echo "<h2>rodada".($i+1). "numero sorteado é: $sorteio[$i] </h2> ";
+
+  };
+
+?>
+
+
+
 <script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>
