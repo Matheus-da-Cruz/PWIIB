@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>formulario</title>
 <link rel="stylesheet" href="bootstrap.min.css">
 <style>
 
@@ -33,7 +33,7 @@
             php
           </a>
           <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="variavel.php">variavel</a></li>
+            <li><a class="dropdown-item" href="variavel.php">variavel</a></li>
             <li><a class="dropdown-item" href="if.php">if</a></li>
             <li><a class="dropdown-item" href="while.php">while</a></li>
             <li><a class="dropdown-item" href="for.php">for</a></li>
@@ -54,8 +54,37 @@
 
 </div>
 
+<h1> cadastro do usuario </h1>
+
+<form action="salvar_dados.php" method="post">
+<label>email</label>
+<input type="text" name="login" value=""/>
+<br />
+<label> senha </label>
+<input type="password" name="senha" value="" />
+<br>
+<button type="submit">
+    logar
+</button>
+<br><br>
+
+<h1>formulario 1</h1>
+</form>
+
+<form action="salvar_dados.php" method="get">
+<label>nome</label>
+<input type="text" name="nome" value=""/>
+<br />
+<label> idade </label>
+<input type="text" name="idade" value="" />
+<br />
+<button type="submit">
+    logar
+</button>
 
     <?php
+
+
 
 
     ?> 
