@@ -7,7 +7,36 @@
     <title>Document</title>
 <link rel="stylesheet" href="bootstrap.min.css">
 <style>
+.grid-container {
+  display: gid;
+  grid-template-columns:  1fr 3fr ;
+ 
+  background-color: none;
 
+  
+}
+.grid-container > div {
+    display: center;
+  background-color: none;
+  color: black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.item2{
+    background-color:blue;
+
+
+}
+
+button {
+    background-color: orange;
+}
+
+label{
+    color: orange;
+}
 </style>
 
 
@@ -54,14 +83,37 @@
 
 
 </div>
+<div class="container text-center col-md-5">
+ <div class="item1"><div>
 
 
+  <div class="item2">
+
+  <img src=".\img\defesa-civil-brasil.png" alt="" width="460" height="305">
+      
+  <form action="salvar_dados.php" method="post">
+<label>digite seu login</label>
+<br>
+<input type="text" name="login" value=""/>
+<br />
+<label> digite sua senha </label>
+<br>
+<input type="password" name="senha" value="" />
+<br>
+
+<button type="submit">
+    Entrar
+</button></div>
+
+
+<div><div>
+ 
+</div>
 
     <?php
 
 
     ?> 
 <script src="bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
