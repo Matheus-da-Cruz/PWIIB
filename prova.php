@@ -34,9 +34,9 @@ button {
     background-color: orange;
 }
 
-label{
-    color: orange;
-}
+
+
+
 </style>
 
 
@@ -91,19 +91,27 @@ label{
 
   <img src=".\img\defesa-civil-brasil.png" alt="" width="460" height="305">
       
-  <form action="salvar_dados.php" method="post">
-<label>digite seu login</label>
-<br>
-<input type="text" name="login" value=""/>
-<br />
-<label> digite sua senha </label>
-<br>
-<input type="password" name="senha" value="" />
-<br>
 
+
+
+
+  <form action="salvar_dados.php" method="post">
+  <div class="form-floating mb-3">
+  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+  <label for="floatingInput">Email address</label>
+</div>
+<div class="form-floating">
+  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+  <label for="floatingPassword">Password</label>
+</div>
 <button type="submit">
     Entrar
 </button></div>
+
+
+
+
+
 
 
 <div><div>
