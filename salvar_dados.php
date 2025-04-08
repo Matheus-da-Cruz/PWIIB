@@ -31,3 +31,31 @@
 
 
 ?>
+
+
+.grid-container {
+  display: gid;
+  grid-template-columns:  1fr 3fr ;
+ 
+  background-color: none;
+
+  
+}
+.grid-container > div {
+    display: center;
+  background-color: none;
+  color: black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.item2{
+    background-color:blue;
+
+
+}
+
+button {
+    background-color: orange;
+}
