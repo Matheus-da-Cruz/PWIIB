@@ -69,6 +69,9 @@ button {
             <li><a class="dropdown-item" href="array.php">array/vetor</a></li>
             <li><a class="dropdown-item" href="formulario.php">formulario</a></li>
             <li><a class="dropdown-item" href="prova.php">prova</a></li>
+            <li><a class="dropdown-item" href="instalar.php">instalar</a></li>
+            <li><a class="dropdown-item" href="usuarios.php">usuarios</a></li>
+            <li><a class="dropdown-item" href="switch.php">switch</a></li>
           </ul>
         </li>
         <li class="nav item">
