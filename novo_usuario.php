@@ -12,7 +12,7 @@
                 <label>senha</label>
                 <input name="senha" type="password" class="form-control">
                 <br/>
-                <input type="checkbox" name="ativo" value="usuario_ativo" /> 
+                <input type="checkbox" name="ativo" value="1" /> 
                 usuario ativo
                 <br/>
                 <br/>
