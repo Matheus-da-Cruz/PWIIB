@@ -78,6 +78,9 @@ button {
         <li class="nav-item" href="instalar.php">
           instalar o banco 
         </li>
+        <li class="nav-item" href="usuarios.php">
+          Usuarios 
+        </li>        
       </ul>
       
     </div>

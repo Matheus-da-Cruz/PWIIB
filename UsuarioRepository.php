@@ -16,10 +16,8 @@ class UsuarioRepository {
         return $usuarios;
     }
     public function buscarPorid($id){
-        $stmt = $this -> conexao->prepare{"SELECT * FROM usuarios WHERE id = ?"};
-
-        $stmt->bind_param("I", $id);
-
+        $stmt = $this -> conexao->prepare("SELECT * FROM usuarios WHERE id = ?");
+        $stmt->bind_param("i", $id);
         $stmt->execute();
 
 
@@ -35,4 +33,13 @@ class UsuarioRepository {
         $stmt->bind_param("ssi", $login, $senha, $ativo);
         $stmt->execute();
     }
+
+    public function excluirusuario($id)
+    {
+        $sql = "DELETE FROM usuarios where id = ?";
+        $preparar = $this->conexao->prepare($sql);
+        $preparar->bind_param("i",$id);
+        $preparar->execute();
+    }
+    
 }

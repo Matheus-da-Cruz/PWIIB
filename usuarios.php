@@ -58,7 +58,11 @@
                                         <td>$user[ID]</td>
                                         <td>$user[LOGIN]</td>
                                         <td>$user[ATIVO]</td>
-                                        <td></td> 
+                                        <td>
+                                           <a class='btn btn-danger' href='excluir_usuario.php?id=".$user['ID']."'>excluir</a>
+                                            <a class='btn btn-warning' href='editar_usuario.php?id=".$user['ID']."'>editar</a>
+                                        </td>
+
                                       </tr>";
                             }
                         ?>
