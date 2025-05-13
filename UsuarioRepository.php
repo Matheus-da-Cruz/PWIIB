@@ -25,7 +25,21 @@ class UsuarioRepository {
         return $resultado->fetch_assoc();
 
 
+
     }
+
+    public function pesquisar($busca)
+    {
+       $sql = "select * from usuarios where LOGIN like '%$busca%'";
+        $resultado = $this->conexao->query($sql);
+        $usuarios = [];
+        while ($row = $resultado->fetch_assoc()) {
+            array_push($usuarios, $row);
+        }
+        return $usuarios;
+
+    }
+
     public function inserir($login, $senha, $ativo)
     {
         $sql = "INSERT INTO usuarios(LOGIN, SENHA, ATIVO) VALUES (?, ?, ?);";

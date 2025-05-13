@@ -11,8 +11,17 @@
 
     //Chamei o metodo BuscarTodos para puxar 
     // todos usuarios do banco de dados
-    $usuarios = $repo->buscarTodos();
+    //$usuarios = $repo->buscarTodos();
 
+
+    if(isset ($_GET['busca']) && !empty($_GET['busca']))
+    {
+        $usuarios = $repo->Pesquisar($_GET['busca']);
+    }
+    else
+    {
+        $usuarios = $repo->buscarTodos();
+    }
     
 
 ?>
@@ -24,12 +33,14 @@
                 <b>Lista de usuários</b>
             </div>
             <div class="card-body">
+            <form action="usuarios.php" method="get">
               <div class="row">
                     <div class="col-4">
                         <a href="novo_usuario.php" class="btn btn-success">
                             Novo usuário
                         </a>
                     </div>
+
                     <div class="col-4">
                         <input name="busca" class="form-control" />
                     </div>
@@ -39,6 +50,7 @@
                         </button>
                     </div>
               </div>
+            </form>  
               <div class="row">
                 <table class="table table-striped table-hover">
                     <thead>
