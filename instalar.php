@@ -7,43 +7,42 @@ $sql = "CREATE TABLE IF NOT EXISTS USUARIOS (
             LOGIN VARCHAR(50) NOT NULL,
             SENHA VARCHAR(80) NOT NULL,
             ATIVO BIT DEFAULT 1
-        );
-
-        CREATE TABLE REFERENCIAS(
+        );";
+$conexao->query($sql); $sql=
+        "CREATE TABLE REFERENCIAS (
             ID INT PRIMARY KEY AUTO_INCREMENT,
             NOME VARCHAR(100) NOT NULL
-        );
-
-        CREATE TABLE DISCIPLINAS(
+        );"
+;$conexao->query($sql); $sql=
+        "CREATE TABLE DISCIPLINAS(
             ID INT PRIMARY KEY AUTO_INCREMENT,
             DISCIPLINA VARCHAR(100)        
-        );
-
-        CREATE TABLE PERGUNTAS(
+        );"
+;$conexao->query($sql); $sql=
+        "CREATE TABLE PERGUNTAS(
             ID INT PRIMARY KEY AUTO_INCREMENT,
             PERGUNTA TEXT NOT NULL,
             ID_DISCIPLINA INT,
             CONSTRAINT FK_DISCIPLINA FOREIGN KEY (ID_DISCIPLINA) 
                 REFERENCES DISCIPLINAS(ID)
-        );
-
-        CREATE TABLE ALTERNATIVAS(
+        );"
+;$conexao->query($sql); $sql=
+        "CREATE TABLE ALTERNATIVAS(
             ID INT PRIMARY KEY AUTO_INCREMENT,
             ID_PERGUNTA INT,
             CORRETA BIT,
             ALTERNATIVA TEXT NOT NULL,
             CONSTRAINT FK_PERGUNTAS FOREIGN KEY(ID_PERGUNTA)
                 REFERENCES PERGUNTAS(ID)
-        );
-
-        CREATE TABLE REF_PERGUNTAS(
+        );"
+;$conexao->query($sql); $sql=
+        "CREATE TABLE REF_PERGUNTAS(
             ID INT PRIMARY KEY AUTO_INCREMENT,
             ID_PERGUNTA INT,
             ID_REF INT,
             CONSTRAINT FK_PERGUNTA FOREIGN KEY (ID_PERGUNTA) REFERENCES PERGUNTAS(ID),
             CONSTRAINT FK_REF FOREIGN KEY (ID_REF) REFERENCES REFERENCIAS(ID)
-        );
-        ";
+        );";
 
 
 if ($conexao->query($sql)) {
