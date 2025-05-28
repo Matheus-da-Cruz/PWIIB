@@ -1,21 +1,21 @@
 <?php
     include "cabecalho.php"; 
     include "conexao.php";
-    require_once 'UsuarioRepository.php';
+    require_once 'referenciasRepository.php';
 
     //Crio um objeto do tipo UsuarioRepository chamado repo
     //E recebe a conexão como parametro
-    $repo = new UsuarioRepository($conexao);
+    $repo = new referenciasRepository($conexao);
 
     if( isset($_GET['busca']) && !empty($_GET['busca']) )
     {
-        $usuarios = $repo->Pesquisar( $_GET['busca'] )
+        $referencias = $repo->Pesquisar( $_GET['busca'] );
     }
     else
     {
         //Chamei o metodo BuscarTodos para puxar 
         // todos usuarios do banco de dados
-        $usuarios = $repo->buscarTodos();
+        $referencias = $repo->buscarTodos();
     }
     
 
@@ -25,14 +25,14 @@
         <br />
         <div class="card">
             <div class="card-header">
-                <b>Lista de usuários</b>
+                <b>Lista de referencias</b>
             </div>
             <div class="card-body">
-             <form action="usuarios.php" method="get">
+             <form action="referencias.php" method="get">
                 <div class="row">
                         <div class="col-4">
-                            <a href="novo_usuario.php" class="btn btn-success">
-                            Novo usuário
+                            <a href="referencias_novo.php" class="btn btn-success">
+                            Nova referencias
                             </a>
                         </div>
                         <div class="col-4">
@@ -51,8 +51,7 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Login</th>
-                            <th>Ativo</th>
+                            <th>nome</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -60,16 +59,15 @@
                         <?php
                             //foreach serve para ler todos os usuarios 
                             // vindos do banco em formato de array chave valor
-                            foreach ($usuarios as $user) {
+                            foreach ($referencias as $refe) {
                                 echo "<tr>
-                                        <td>".$user['ID']."</td>
-                                        <td>".$user['LOGIN']."</td>
-                                        <td>".$user['ATIVO']."</td>
+                                        <td>".$refe['ID']."</td>
+                                        <td>".$refe['nome']."</td>
                                         <td>
                                             <a class='btn btn-danger'
-                                                 href='excluir_usuario.php?id=".$user['ID']."'>Excluir</a>
+                                                 href='referencias_excluir.php?id=".$refe['ID']."'>Excluir</a>
                                             <a class='btn btn-warning'
-                                                 href='editar_usuario.php?id=".$user['ID']."'>Editar</a>
+                                                 href='referencias_editar.php?id=".$refe['ID']."'>Editar</a>
                                         </td> 
                                       </tr>";
                             }

@@ -45,6 +45,13 @@ $conexao->query($sql); $sql=
         );";
 
 
+    $conexao->query($sql); $sql=
+"CREATE TABLE referencias (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    NOME VARCHAR(100) NOT NULL
+);"
+
+
 if ($conexao->query($sql)) {
     echo "Tabela criada com sucesso.<br>";
 } else {
@@ -87,3 +94,4 @@ $conexao->close();
 
 
 ?>
+

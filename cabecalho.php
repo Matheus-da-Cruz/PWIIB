@@ -72,6 +72,7 @@ button {
             <li><a class="dropdown-item" href="instalar.php">instalar</a></li>
             <li><a class="dropdown-item" href="usuarios.php">usuarios</a></li>
             <li><a class="dropdown-item" href="switch.php">switch</a></li>
+            <li><a class="dropdown-item" href="referencias.php">referencias</a></li>
           </ul>
         </li>
         <li class="nav item">

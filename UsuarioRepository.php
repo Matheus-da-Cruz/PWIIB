@@ -15,6 +15,19 @@ class UsuarioRepository {
         }
         return $usuarios;
     }
+    
+    public function pesquisar($busca)
+    {
+       $sql = "select * from usuarios where LOGIN like '%$busca%'";
+        $resultado = $this->conexao->query($sql);
+        $usuarios = [];
+        while ($row = $resultado->fetch_assoc()) {
+            array_push($usuarios, $row);
+        }
+        return $usuarios;
+
+    }
+
     public function buscarPorid($id){
         $stmt = $this -> conexao->prepare("SELECT * FROM usuarios WHERE id = ?");
         $stmt->bind_param("i", $id);
@@ -28,31 +41,20 @@ class UsuarioRepository {
 
     }
 
-    public function pesquisar($busca)
-    {
-       $sql = "select * from usuarios where LOGIN like '%$busca%'";
-        $resultado = $this->conexao->query($sql);
-        $usuarios = [];
-        while ($row = $resultado->fetch_assoc()) {
-            array_push($usuarios, $row);
-        }
-        return $usuarios;
 
-    }
-
-    public function inserir($login, $senha, $ativo)
+    public function inserir($id, $nome)
     {
         $sql = "INSERT INTO usuarios(LOGIN, SENHA, ATIVO) VALUES (?, ?, ?);";
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bind_param("ssi", $login, $senha, $ativo);
+        $stmt->bind_param("ssi",  $id, $login);
         $stmt->execute();
     }
 
-    public function Editar($login, $id, $ativo)
+    public function Editar($id, $nome)
     {
         $sql = "UPDATE usuarios SET LOGIN=?, ATIVO =? where ID =?";
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bind_param("sii", $login,$id,$ativo);
+        $stmt->bind_param("sii",$id,$login);
         $stmt->execute();
     }
 
