@@ -8,7 +8,7 @@ if( isset($_GET["id"]) && !empty($_GET["id"]) )
     $referencias = $repo->buscarPorId($_GET["id"]);
     if($referencias != null)
     {
-        $repo->referencias_excluir($_GET["id"]);
+        $repo->excluir($_GET["id"]);
     }
     header('location: referencias.php');
 }

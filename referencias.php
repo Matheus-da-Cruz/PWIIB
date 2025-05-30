@@ -7,6 +7,10 @@
     //E recebe a conexão como parametro
     $repo = new referenciasRepository($conexao);
 
+    if(isset($_POST['nome']) && !empty($_POST['nome'])){
+        $repo->Inserir($_POST['nome']);
+    }
+
     if( isset($_GET['busca']) && !empty($_GET['busca']) )
     {
         $referencias = $repo->Pesquisar( $_GET['busca'] );
@@ -62,7 +66,7 @@
                             foreach ($referencias as $refe) {
                                 echo "<tr>
                                         <td>".$refe['ID']."</td>
-                                        <td>".$refe['nome']."</td>
+                                        <td>".$refe['NOME']."</td>
                                         <td>
                                             <a class='btn btn-danger'
                                                  href='referencias_excluir.php?id=".$refe['ID']."'>Excluir</a>
@@ -85,5 +89,5 @@
 
 <?php
 
-    include "rodape.php"; 
+include "rodape.php";  
 ?>

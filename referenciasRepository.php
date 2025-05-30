@@ -37,30 +37,28 @@ class referenciasRepository {
         $resultado = $stmt->get_result();
         return $resultado->fetch_assoc();
     }
-    public function Inserir($id,$nome)
-    {
-        echo $ativo;
-        
-        $sql = "INSERT INTO referencias (LOGIN, SENHA, ATIVO) 
-                VALUES (?, ?, ?);";
+    public function Inserir($nome)
+    {    
+        $sql = "INSERT INTO referencias (NOME) 
+                VALUES (?);";
                 $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("ssi", $id,$nome);
+                $stmt->bind_param("s", $nome);
                 $stmt->execute();
     }
 
-    public function Editar($login, $id, $ativo)
+    public function Editar($id,$nome)
     {
-        $sql = "UPDATE usuarios set LOGIN = ?, ATIVO = ? where ID = ?";
+        $sql = "UPDATE referencias set NOME = ? where ID = ?";
                 $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("sii", $id,$nome);
+                $stmt->bind_param("is", $id,$nome);
                 $stmt->execute();
     }
 
 
 
-    public function excluirUsuario($id)
+    public function excluir($id)
     {
-        $sql = "DELETE FROM usuarios where id = ?";
+        $sql = "DELETE FROM referencias where id = ?";
         $preparar = $this->conexao->prepare($sql);
         $preparar->bind_param("i",$id);
         $preparar->execute();

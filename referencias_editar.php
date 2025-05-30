@@ -18,10 +18,10 @@ else
         <div class="card">
             <div class="card-header">Editar Usuário</div>
             <div class="card-body">
-                <form action="salvar_edicao_usuario.php" method="post">
+                <form action="referencias_editar_salvar.php" method="post">
                     <label>Id</label>
                     <input type="text"
-                            value="<?php echo $usuario['ID'] ?>"
+                            value="<?php echo $referencias['ID'] ?>"
                             class="form-control"
                             name="ID"
                             readonly 
@@ -29,28 +29,13 @@ else
                     <br />
                     <label>nome</label>
                     <input type="text"
-                            value="<?php echo $referencias['LOGIN'] ?>"
+                            value="<?php echo $referencias['NOME'] ?>"
                             class="form-control"
-                            name="LOGIN"
+                            name="NOME"
                              />
                     <br />
-                    <label>Ativo</label>
-                    <select name="ATIVO" class='form-control'>
-                        <?php 
-                            if($usuario["ATIVO"])
-                            {
-                                ?>
-                                    <option value="1" selected >Ativado</option>
-                                    <option value="0">Desativado</option>
-                                <?php
-                            }else{
-                                ?>
-                                    <option value="1">Ativado</option>
-                                    <option value="0" selected>Desativado</option>
-                                <?php
-                            }
-                        ?>
-                    </select>
+
+
                     <br />
                     <button class="btn btn-primary" type="submit">
                             Salvar Usuário

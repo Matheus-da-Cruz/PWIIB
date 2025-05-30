@@ -5,10 +5,9 @@ require_once "referenciasRepository.php";
 $repo = new referenciasRepository($conexao);
 
 
-if( isset($_POST["referencias_salvar"]) )
+if(isset($_POST["nome"]) )
 {
-    $ativo = isset( $_POST['id'] ) ? $_POST['id'] : false ;
-    $repo->Inserir($_POST['nome'],$_POST['nome'],$ativo);
+    $repo->Inserir($_POST['nome']);
     header('location: referencias.php');
 }
 else

@@ -4,19 +4,16 @@
 ?>
 <div class="row">
     <div class="col-4 offset-4">
-        <form action="salvar_usuario.php" method="post">
+        <form action="referencias_salvar.php" method="post">
             <br>
 
-            <label>id</label>
-            <input name="id" type="int" class="form-control" />
-            <br />
             <label>nome</label>
             <br/>
-            <input type="text" name="nome"  />
+            <input type="text" name="nome" placeholder="Nome da referênica"/>
             
             <br />
             <br />
-            <button name="salvar_usuario" type="submit" class="btn btn-primary">
+            <button name="salvar" type="submit" class="btn btn-primary">
                 Salvar referencias
             </button>
         </form>
