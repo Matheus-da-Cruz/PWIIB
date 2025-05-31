@@ -19,7 +19,7 @@ class referenciasRepository {
 
     public function Pesquisar($busca)
     {
-        $sql = "SELECT * FROM referencias WHERE LOGIN like '%$busca%' ";
+        $sql = "SELECT * FROM referencias WHERE nome like '%$busca%' ";
         $resultado = $this->conexao->query($sql);
         $referencias = [];
         while ($row = $resultado->fetch_assoc()) {
@@ -50,7 +50,7 @@ class referenciasRepository {
     {
         $sql = "UPDATE referencias set NOME = ? where ID = ?";
                 $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("is", $id,$nome);
+                $stmt->bind_param("si",$nome,$id);
                 $stmt->execute();
     }
 
