@@ -1,59 +1,44 @@
 <?php 
 include "conexao.php";
-require_once "UsuarioRepository.php";
+require_once "disciplinaRepository.php";
 include "cabecalho.php";
 if(isset($_GET['id']) && !empty($_GET['id']) )
 {
-    $repo = new UsuarioRepository($conexao);
-    $usuario = $repo->buscarPorId($_GET['id']);
+    $repo = new disciplinaRepository($conexao);
+    $referencias = $repo->buscarPorId($_GET['id']);
 }
 else
 {
-    header('location: usuarios.php');
+    header('location: referencias.php');
 }
 ?>
 <br />
 <div class="row">
     <div class="col-4 offset-4">
         <div class="card">
-            <div class="card-header">Editar Usuário</div>
+            <div class="card-header">Editar disciplinas</div>
             <div class="card-body">
-                <form action="salvar_edicao_usuario.php" method="post">
+                <form action="disciplinas_salvar" method="post">
                     <label>Id</label>
                     <input type="text"
-                            value="<?php echo $usuario['ID'] ?>"
+                            value="<?php echo $disciplinas['ID'] ?>"
                             class="form-control"
                             name="ID"
                             readonly 
                              />
                     <br />
-                    <label>Login</label>
+                    <label>nome</label>
                     <input type="text"
-                            value="<?php echo $usuario['LOGIN'] ?>"
+                            value="<?php echo $disciplinas['NOME'] ?>"
                             class="form-control"
-                            name="LOGIN"
+                            name="NOME"
                              />
                     <br />
-                    <label>Ativo</label>
-                    <select name="ATIVO" class='form-control'>
-                        <?php 
-                            if($usuario["ATIVO"])
-                            {
-                                ?>
-                                    <option value="1" selected >Ativado</option>
-                                    <option value="0">Desativado</option>
-                                <?php
-                            }else{
-                                ?>
-                                    <option value="1">Ativado</option>
-                                    <option value="0" selected>Desativado</option>
-                                <?php
-                            }
-                        ?>
-                    </select>
+
+
                     <br />
                     <button class="btn btn-primary" type="submit">
-                            Salvar Usuário
+                            Salvar disciplinas
                     </button>
 
                 </form>
@@ -61,6 +46,3 @@ else
         </div>
     </div>
 </div>
-
-
-<?php include "rodape.php"; ?>

@@ -1,20 +1,20 @@
 <?php
 include "conexao.php";
-require_once "UsuarioRepository.php";
-$repo = new UsuarioRepository($conexao);
+require_once "disciplinasRepository.php";
+$repo = new disciplinaRepository($conexao);
 
 if( isset($_GET["id"]) && !empty($_GET["id"]) )
 {
-    $usuario = $repo->buscarPorId($_GET["id"]);
-    if($usuario != null)
+    $referencias = $repo->buscarPorId($_GET["id"]);
+    if($disciplinas != null)
     {
-        $repo->excluirUsuario($_GET["id"]);
+        $repo->excluir($_GET["id"]);
     }
-    header('location: usuarios.php');
+    header('location: disciplina.php');
 }
 else
 {
-    header('location: usuarios.php');
+    header('location: disciplina.php');
 }
 
 ?>

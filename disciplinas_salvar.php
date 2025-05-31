@@ -1,19 +1,18 @@
 <?php
 
 include "conexao.php";
-require_once "UsuarioRepository.php";
-$repo = new UsuarioRepository($conexao);
+require_once "disciplinaRepository.php";
+$repo = new disciplinaRepository($conexao);
 
 
-if( isset($_POST["salvar_usuario"]) )
+if(isset($_POST["nome"]) )
 {
-    $ativo = isset( $_POST['ativo'] ) ? $_POST['ativo'] : false ;
-    $repo->Inserir($_POST['login'],$_POST['senha'],$ativo);
-    header('location: usuarios.php');
+    $repo->Inserir($_POST['nome']);
+    header('location: disciplina.php');
 }
 else
 {
-    header('location: usuarios.php');
+    header('location: disciplina.php');
 
 }
 

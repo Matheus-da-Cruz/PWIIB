@@ -4,20 +4,17 @@
 ?>
 <div class="row">
     <div class="col-4 offset-4">
-        <form action="salvar_usuario.php" method="post">
+        <form action="disciplinas_salvar.php" method="post">
             <br>
-            <label>Login</label>
-            <input name="login" type="text" class="form-control" />
+
+            <label>nome</label>
             <br/>
-            <label>Senha</label>
-            <input name="senha" type="password" class="form-control" />
-            <br />
-            <input type="checkbox" name="ativo" value="1" />
-            Usuário Ativo
+            <input type="text" name="nome" placeholder="Nome da disciplina"/>
+            
             <br />
             <br />
-            <button name="salvar_usuario" type="submit" class="btn btn-primary">
-                Salvar usuário
+            <button name="salvar" type="submit" class="btn btn-primary">
+                Salvar disciplina
             </button>
         </form>
     </div>

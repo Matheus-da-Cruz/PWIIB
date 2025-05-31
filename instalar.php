@@ -51,6 +51,11 @@ $conexao->query($sql); $sql=
     NOME VARCHAR(100) NOT NULL
 );";
 
+$conexao->query($sql); $sql=
+"CREATE TABLE disciplinas (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    NOME VARCHAR(100) NOT NULL
+);";
 
 if ($conexao->query($sql)) {
     echo "Tabela criada com sucesso.<br>";

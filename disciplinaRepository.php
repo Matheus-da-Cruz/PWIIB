@@ -1,5 +1,5 @@
 <?php
-class UsuarioRepository {
+class disciplinaRepository {
     private $conexao;
 
     public function __construct(mysqli $conexao)
@@ -8,60 +8,57 @@ class UsuarioRepository {
     }
 
     public function buscarTodos() {
-        $result = $this->conexao->query(
-            "SELECT * FROM usuarios");
+        $result = $this->conexao->query("SELECT * FROM disciplinas");
 
-        $usuarios = [];
+        $disciplinas = [];
         while ($row = $result->fetch_assoc()) {
-            array_push($usuarios, $row);
+            array_push($disciplinas, $row);
         }
-        return $usuarios;
+        return $disciplinas;
     }
 
     public function Pesquisar($busca)
     {
-        $sql = "SELECT * FROM usuarios WHERE LOGIN like '%$busca%' ";
+        $sql = "SELECT * FROM disciplinas WHERE nome like '%$busca%' ";
         $resultado = $this->conexao->query($sql);
-        $usuarios = [];
+        $disciplinas = [];
         while ($row = $resultado->fetch_assoc()) {
-            array_push($usuarios, $row);
+            array_push($disciplinas, $row);
         }
-        return $usuarios;
+        return $disciplinas;
     }
    
     public function buscarPorId($id) {
         $stmt = $this->conexao->prepare(
-            "SELECT * FROM usuarios WHERE id = ?");
+            "SELECT * FROM disciplinas WHERE id = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
 
         $resultado = $stmt->get_result();
         return $resultado->fetch_assoc();
     }
-    public function Inserir($id, $nome)
-    {
-        echo $ativo;
-        
-        $sql = "INSERT INTO usuarios (LOGIN, SENHA, ATIVO) 
-                VALUES (?, ?, ?);";
+    public function Inserir($nome)
+    {    
+        $sql = "INSERT INTO disciplinas (NOME) 
+                VALUES (?);";
                 $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("ssi", $id, $nome);
+                $stmt->bind_param("s", $nome);
                 $stmt->execute();
     }
 
     public function Editar($id,$nome)
     {
-        $sql = "UPDATE usuarios set LOGIN = ?, ATIVO = ? where ID = ?";
+        $sql = "UPDATE disciplinas set NOME = ? where ID = ?";
                 $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("sii", $id, $nome);
+                $stmt->bind_param("si",$nome,$id);
                 $stmt->execute();
     }
 
 
 
-    public function excluirUsuario($id)
+    public function excluir($id)
     {
-        $sql = "DELETE FROM usuarios where id = ?";
+        $sql = "DELETE FROM disciplinas where id = ?";
         $preparar = $this->conexao->prepare($sql);
         $preparar->bind_param("i",$id);
         $preparar->execute();
