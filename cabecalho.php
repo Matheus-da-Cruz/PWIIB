@@ -74,6 +74,7 @@ button {
             <li><a class="dropdown-item" href="switch.php">switch</a></li>
             <li><a class="dropdown-item" href="referencias.php">referencias</a></li>
             <li><a class="dropdown-item" href="disciplina.php">disciplinas</a></li>
+            <li><a class="dropdown-item" href="perguntas.php">perguntas</a></li>
           </ul>
         </li>
         <li class="nav item">
