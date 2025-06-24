@@ -37,14 +37,14 @@ class perguntasRepository {
         $resultado = $stmt->get_result();
         return $resultado->fetch_assoc();
     }
-    public function Inserir($nome)
-    {    
-        $sql = "INSERT INTO perguntas (NOME) 
-                VALUES (?);";
-                $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("s", $nome);
-                $stmt->execute();
+    public function Inserir($pergunta, $id_disciplina)
+    {
+        $sql = "INSERT INTO perguntas (PERGUNTA, ID_DISCIPLINA) VALUES (?, ?)";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bind_param("si", $pergunta, $id_disciplina);
+        $stmt->execute();
     }
+    
 
     public function Editar($id,$nome)
     {

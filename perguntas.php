@@ -2,6 +2,7 @@
     include "cabecalho.php"; 
     include "conexao.php";
     require_once 'perguntasRepository.php';
+    require_once 'disciplinaRepository.php';
 
     //Crio um objeto do tipo UsuarioRepository chamado repo
     //E recebe a conexão como parametro
@@ -61,13 +62,14 @@
                     </thead>
                     <tbody>
                         <?php
+                        var_dump($perguntas);
                             //foreach serve para ler todos os usuarios 
                             // vindos do banco em formato de array chave valor
                             foreach ($perguntas as $refe) {
                                 echo "<tr>
                                         <td>".$refe['ID']."</td>
                                         <td>".$refe['PERGUNTA']."</td>
-                                        <td>".$refe['DISCIPLINAS']."</td>
+                                        <td>".$refe['DISCIPLINA']."</td>
                                         <td>
                                             <a class='btn btn-danger'
                                                  href='perguntas_excluir.php?id=".$refe['ID']."'>Excluir</a>
