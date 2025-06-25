@@ -1,20 +1,18 @@
 <?php
+
 include "conexao.php";
 require_once "disciplinaRepository.php";
 $repo = new disciplinaRepository($conexao);
 
-if( isset($_GET["id"]) && !empty($_GET["id"]) )
+if( isset($_POST["ID"]) && isset($_POST['DISCIPLINA']) )
 {
-    $disciplinas = $repo->buscarPorId($_GET["id"]);
-    if($disciplinas != null)
-    {
-        $repo->excluir($_GET["id"]);
-    }
+    $repo->Editar($_POST['ID'],$_POST['DISCIPLINA']);
     header('location: disciplina.php');
 }
 else
 {
     header('location: disciplina.php');
+
 }
 
 ?>

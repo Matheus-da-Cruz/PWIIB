@@ -7,8 +7,8 @@
     //E recebe a conexão como parametro
     $repo = new disciplinaRepository($conexao);
 
-    if(isset($_POST['nome']) && !empty($_POST['nome'])){
-        $repo->Inserir($_POST['nome']);
+    if(isset($_POST['disciplina']) && !empty($_POST['disciplina'])){
+        $repo->Inserir($_POST['disciplina']);
     }
 
     if( isset($_GET['busca']) && !empty($_GET['busca']) )
@@ -32,10 +32,10 @@
                 <b>Lista de disciplinas</b>
             </div>
             <div class="card-body">
-             <form action="referencias.php" method="get">
+             <form action="disciplina.php" method="get">
                 <div class="row">
                         <div class="col-4">
-                            <a href="referencias_novo.php" class="btn btn-success">
+                            <a href="disciplina_novo.php" class="btn btn-success">
                             Nova disciplinas
                             </a>
                         </div>
@@ -55,7 +55,7 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>nome</th>
+                            <th>disciplina</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -66,12 +66,12 @@
                             foreach ($disciplinas as $disc) {
                                 echo "<tr>
                                         <td>".$disc['ID']."</td>
-                                        <td>".$disc['NOME']."</td>
+                                        <td>".$disc['DISCIPLINA']."</td>
                                         <td>
                                             <a class='btn btn-danger'
-                                                 href='referencias_excluir.php?id=".$disc['ID']."'>Excluir</a>
+                                                 href='disciplinas_excluir.php?id=".$disc['ID']."'>Excluir</a>
                                             <a class='btn btn-warning'
-                                                 href='referencias_editar.php?id=".$disc['ID']."'>Editar</a>
+                                                 href='disciplinas_editar.php?id=".$disc['ID']."'>Editar</a>
                                         </td> 
                                       </tr>";
                             }

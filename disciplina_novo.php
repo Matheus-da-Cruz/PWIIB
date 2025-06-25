@@ -9,7 +9,7 @@
 
             <label>nome</label>
             <br/>
-            <input type="text" name="nome" placeholder="Nome da disciplina"/>
+            <input type="text" name="disciplina" placeholder="Nome da disciplina"/>
             
             <br />
             <br />

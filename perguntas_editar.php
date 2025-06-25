@@ -18,7 +18,7 @@ else
         <div class="card">
             <div class="card-header">Editar pergunta</div>
             <div class="card-body">
-                <form action="referencias_editar_salvar.php" method="post">
+                <form action="perguntas_editar_salvar.php" method="post">
                     <label>Id</label>
                     <input type="text"
                             value="<?php echo $perguntas['ID'] ?>"

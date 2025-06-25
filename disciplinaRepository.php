@@ -19,7 +19,7 @@ class disciplinaRepository {
 
     public function Pesquisar($busca)
     {
-        $sql = "SELECT * FROM disciplinas WHERE nome like '%$busca%' ";
+        $sql = "SELECT * FROM disciplinas WHERE disciplina like '%$busca%' ";
         $resultado = $this->conexao->query($sql);
         $disciplinas = [];
         while ($row = $resultado->fetch_assoc()) {
@@ -37,20 +37,20 @@ class disciplinaRepository {
         $resultado = $stmt->get_result();
         return $resultado->fetch_assoc();
     }
-    public function Inserir($nome)
+    public function Inserir($disciplina)
     {    
-        $sql = "INSERT INTO disciplinas (NOME) 
+        $sql = "INSERT INTO disciplinas (disciplina) 
                 VALUES (?);";
                 $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("s", $nome);
+                $stmt->bind_param("s", $disciplina);
                 $stmt->execute();
     }
 
-    public function Editar($id,$nome)
+    public function Editar($id,$disciplina)
     {
-        $sql = "UPDATE disciplinas set NOME = ? where ID = ?";
+        $sql = "UPDATE disciplinas set disciplina = ? where ID = ?";
                 $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("si",$nome,$id);
+                $stmt->bind_param("si",$disciplina,$id);
                 $stmt->execute();
     }
 

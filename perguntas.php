@@ -8,20 +8,21 @@
     //E recebe a conexão como parametro
     $repo = new perguntasRepository($conexao);
 
-    if(isset($_POST['nome']) && !empty($_POST['nome'])){
-        $repo->Inserir($_POST['nome']);
+    if(isset($_POST['PERGUNTA']) && !empty($_POST['PERGUNTA'])){
+        $repo->Inserir($_POST['PERGUNTA']);
     }
 
     if( isset($_GET['busca']) && !empty($_GET['busca']) )
     {
-        $perguntas = $repo->Pesquisar( $_GET['busca'] );
+        $obj = $repo->Pesquisar( $_GET['busca'] );
     }
     else
     {
         //Chamei o metodo BuscarTodos para puxar 
         // todos usuarios do banco de dados
-        $perguntas = $repo->buscarTodos();
+        $obj = $repo->buscarTodos();
     }
+
     
 
 ?>
@@ -30,14 +31,14 @@
         <br />
         <div class="card">
             <div class="card-header">
-                <b>Lista de perguntas</b>
+                <b>Lista de Perguntas</b>
             </div>
             <div class="card-body">
              <form action="perguntas.php" method="get">
                 <div class="row">
                         <div class="col-4">
                             <a href="perguntas_novo.php" class="btn btn-success">
-                            Nova perguntas
+                                Novo
                             </a>
                         </div>
                         <div class="col-4">
@@ -56,27 +57,29 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>perguntas</th>
-                            <th>Disciplinas</th>
+                            <th>Pergunta</th>
+                            <th>Disciplina</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        var_dump($perguntas);
-                            //foreach serve para ler todos os usuarios 
-                            // vindos do banco em formato de array chave valor
-                            foreach ($perguntas as $refe) {
-                                echo "<tr>
-                                        <td>".$refe['ID']."</td>
-                                        <td>".$refe['PERGUNTA']."</td>
-                                        <td>".$refe['DISCIPLINA']."</td>
+                        
+                            foreach ($obj as $row) {
+                                echo
+                                   "<tr>
+                                        <td>".$row['ID']."</td>
+                                        <td>".$row['PERGUNTA']."</td>
+                                        <td>".$row['ID_DISCIPLINA']."</td>
                                         <td>
+                                         <a clasws='btn btn-primary'
+                                                 href='alternativas.php?id=".$row['ID']."'>Alternativas</a>
                                             <a class='btn btn-danger'
-                                                 href='perguntas_excluir.php?id=".$refe['ID']."'>Excluir</a>
+                                                 href='./pergu/perguntas_excluir.php?id=".$row['ID']."'>Excluir</a>
                                             <a class='btn btn-warning'
-                                                 href='perguntas_editar.php?id=".$refe['ID']."'>Editar</a>
+                                                 href='./perguntas_editar.php?id=".$row['ID']."'>Editar</a>
                                         </td> 
-                                      </tr>";
+                                    </tr>";
                             }
                         ?>
                     </tbody>
@@ -84,12 +87,8 @@
               </div>
             </div>
         </div>
-
     </div>
 </div>
-
-
-
 <?php
 
 include "rodape.php";  

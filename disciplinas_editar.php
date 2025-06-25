@@ -5,11 +5,11 @@ include "cabecalho.php";
 if(isset($_GET['id']) && !empty($_GET['id']) )
 {
     $repo = new disciplinaRepository($conexao);
-    $referencias = $repo->buscarPorId($_GET['id']);
+    $disciplinas = $repo->buscarPorId($_GET['id']);
 }
 else
 {
-    header('location: referencias.php');
+    header('location: disciplina.php');
 }
 ?>
 <br />
@@ -18,7 +18,7 @@ else
         <div class="card">
             <div class="card-header">Editar disciplinas</div>
             <div class="card-body">
-                <form action="disciplinas_salvar" method="post">
+                <form action="disciplinas_editar_salvar.php" method="post">
                     <label>Id</label>
                     <input type="text"
                             value="<?php echo $disciplinas['ID'] ?>"
@@ -29,9 +29,9 @@ else
                     <br />
                     <label>nome</label>
                     <input type="text"
-                            value="<?php echo $disciplinas['NOME'] ?>"
+                            value="<?php echo $disciplinas['DISCIPLINA'] ?>"
                             class="form-control"
-                            name="NOME"
+                            name="DISCIPLINA"
                              />
                     <br />
 
