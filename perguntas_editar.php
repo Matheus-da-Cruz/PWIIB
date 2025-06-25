@@ -29,7 +29,7 @@ else
                     <br />
                     <label>pergunta</label>
                     <input type="text"
-                            value="<?php echo $perguntas['NOME'] ?>"
+                            value="<?php echo $perguntas['PERGUNTA'] ?>"
                             class="form-control"
                             name="NOME"
                              />

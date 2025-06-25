@@ -19,7 +19,7 @@ class perguntasRepository {
 
     public function Pesquisar($busca)
     {
-        $sql = "SELECT * FROM perguntas WHERE nome like '%$busca%' ";
+        $sql = "SELECT * FROM perguntas WHERE pergunta like '%$busca%' ";
         $resultado = $this->conexao->query($sql);
         $perguntas = [];
         while ($row = $resultado->fetch_assoc()) {
@@ -48,7 +48,7 @@ class perguntasRepository {
 
     public function Editar($id,$nome)
     {
-        $sql = "UPDATE perguntas set NOME = ? where ID = ?";
+        $sql = "UPDATE perguntas set pergunta = ? where ID = ?";
                 $stmt = $this->conexao->prepare($sql);
                 $stmt->bind_param("si",$nome,$id);
                 $stmt->execute();

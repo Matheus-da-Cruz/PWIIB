@@ -75,7 +75,7 @@
                                          <a clasws='btn btn-primary'
                                                  href='alternativas.php?id=".$row['ID']."'>Alternativas</a>
                                             <a class='btn btn-danger'
-                                                 href='./pergu/perguntas_excluir.php?id=".$row['ID']."'>Excluir</a>
+                                                 href='./perguntas_excluir.php?id=".$row['ID']."'>Excluir</a>
                                             <a class='btn btn-warning'
                                                  href='./perguntas_editar.php?id=".$row['ID']."'>Editar</a>
                                         </td> 
