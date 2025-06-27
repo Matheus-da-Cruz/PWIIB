@@ -1,10 +1,10 @@
 <?php
     include "cabecalho.php"; 
     include "conexao.php";
-    require_once 'disciplinaRepository.php';
+    require_once 'alternativaRepository.php';
 
 $id = $_GET['id'];
-$repo = new AlternativaRepository($conexao);
+$repo = new alternativaRepository($conexao);
 $alt = $repo->buscarPorId($id);
 ?>
 
